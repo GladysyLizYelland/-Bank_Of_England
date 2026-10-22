@@ -5,7 +5,7 @@ This project is part of the University of Cambridge Career Accelerator, in colla
 
 By leveraging NLP methods such as topic modelling, sentiment analysis, and summarisation, we aim to provide insights that support financial stability assessments and risk monitoring.
 
-This was mainly based on a group project - that I extended a bit - as a learning process
+*Note: This repository originated as a collaborative group project. I have since extended the codebase, expanded the scope, and integrated domain-specific architectures as an independent learning initiative.*
 
 # 🎯 Objectives
 Extract and process textual data from G-SIB earnings calls.
