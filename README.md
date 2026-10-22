@@ -13,3 +13,23 @@ Generate summary insights with instruction-tuned models.
 Provide a structured dashboard or reporting format for key stakeholders.
 
 # 📂 Project Structure
+├── Bank Data/                    # Raw and processed data
+│   ├── raw/                 # Unprocessed transcripts & reports
+|   ├── parsed/              # parsed unstructured data to structure format
+│   ├── Preprocessed/             # parsed data that has Preprocessed text data
+|   ├─- Sentimented/           # Preprocessed text data that have sentiment metrics added
+|   ├─- Topics/           # Preprocessed text data that have sentiment metrics added with topics.
+├── Notebooks/               # Jupyter/Colab notebooks for analysis
+│   ├── Parser/          
+│   ├── EDA/             # Exploratory Data Analysis
+│   ├── Prerprocessing/        
+│   ├── Sentiment analysis/
+│   ├── Topic Modeling/
+│   ├── LLM/
+│   ├── Conolidate/
+│   ├── Summarisation.ipynb    # Text summarisation methods
+│   ├── Visualization         # Data visualisation scripts
+├── reports/                 # Documentation and findings
+├── requirements.txt         # Required Python libraries
+├── README.md                # This file
+└── .gitignore               # Ignored files
