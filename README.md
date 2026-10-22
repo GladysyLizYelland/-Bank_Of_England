@@ -5,6 +5,8 @@ This project is part of the University of Cambridge Career Accelerator, in colla
 
 By leveraging NLP methods such as topic modelling, sentiment analysis, and summarisation, we aim to provide insights that support financial stability assessments and risk monitoring.
 
+This was mainly based on a group project - that I extended a bit - as a learning process
+
 # 🎯 Objectives
 Extract and process textual data from G-SIB earnings calls.
 Identify key themes (topics) and emerging trends.
@@ -42,6 +44,8 @@ Provide a structured dashboard or reporting format for key stakeholders.
 ## 🤖 Embedding Model Selection
 
 This pipeline uses sentence-transformer embeddings to vectorize text for downstream sentiment analysis and topic modeling. Before running the scripts, you must select the model that fits your data source.
+
+As a team we chose to use `BAAI/bge-base-en-v1.5` , but I wanted to modify it to use `JehnenS/FinTextSim`, to observe if we obtain better outcomes. Due to a bit more research, I did that stated the reasons why.
 
 > [!TIP]
 > **Recommended Baseline:** Use `JehnenS/FinTextSim` for structural financial analysis and `BAAI/bge-base-en-v1.5` if expanding into general news text.
