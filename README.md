@@ -27,9 +27,9 @@ Provide a structured dashboard or reporting format for key stakeholders.
 │   ├── parser/                  # Raw text extraction and structured parsing pipelines
 │   ├── eda/                     # Exploratory Data Analysis notebooks
 │   ├── preprocessing/           # Text cleansing, tokenisation, and normalization routines
-│   ├── sentiment_analysis/      # Sentiment scoring models and implementation
-│   ├── topic_modeling/          # Latent Dirichlet Allocation (LDA) / BERTopic models or others
-│   ├── llm/                     # Large Language Model prompting and fine-tuning experiments
+│   ├── sentiment_analysis/      # Sentiment scoring models and implementation i.e. Finbert
+│   ├── topic_modeling/          # Latent Dirichlet Allocation (LDA) / BERTopic models +/ FinTextSim
+│   ├── llm/                     # LLM prompting and fine-tuning experiments i.e FinGPT, Gemma, Falcon 8
 │   ├── consolidate/             # Data merging, alignment, and schema aggregation
 │   ├── summarisation.ipynb      # Text summarisation methods (extractive/abstractive)
 │   └── visualization/           # Notebooks for generating analytical plots and charts
