@@ -56,9 +56,6 @@ This pipeline leverages sentence-transformer embeddings to vectorize text for do
 
 While our initial team implementation utilized `BAAI/bge-base-en-v1.5`, I conducted further research and extended the architecture to support `JehnenS/FinTextSim`. Integrating this domain-specific financial model yields significantly better clustering outcomes by eliminating semantic noise inherent to general-purpose models.
 
-> [!TIP]
-> **Recommended Baseline:** Use `JehnenS/FinTextSim` for structural financial text analysis (e.g., corporate filings and earnings calls) and fallback to `BAAI/bge-base-en-v1.5` only if expanding the raw dataset to include general, non-financial news text.
-
 ### 📊 Model Comparison
 
 | Feature / Metric | `JehnenS/FinTextSim` (Default) | `BAAI/bge-base-en-v1.5` |
