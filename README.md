@@ -48,16 +48,6 @@ This pipeline leverages sentence-transformer embeddings to vectorize text for do
 
 While our initial team implementation utilised `BAAI/bge-base-en-v1.5`, I conducted further research and extended the architecture to support `JehnenS/FinTextSim`. Integrating this domain-specific financial model yields significantly better clustering outcomes by eliminating semantic noise inherent to general-purpose models.
 
-### 📊 Model Comparison
-
-| Feature / Metric | `JehnenS/FinTextSim` (Default) | `BAAI/bge-base-en-v1.5` |
-| :--- | :--- | :--- |
-| **Primary Domain** | **Strictly Financial Texts** (10-Ks, Earnings Calls) | **General Purpose Texts** (News, Web Data) |
-| **Training Focus** | S&P 500 10-K Filings (Items 7 & 7A) | Broad multi-domain corpus pairs |
-| **Clustering Performance** | **+81%** Intratopic Similarity | Standard broad baseline groupings |
-| **Noise Reduction** | **-100%** Intertopic Overlap | Susceptible to semantic overlap in financial jargon |
-| **Architecture Specs** | 384 Dimensions / 256 Context Window | 768 Dimensions / 512 Context Window |
-
 ### 🔍 Selection Logic
 
 * **Use `JehnenS/FinTextSim` for `notebooks/topic_modeling/`**  
