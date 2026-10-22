@@ -39,4 +39,46 @@ Provide a structured dashboard or reporting format for key stakeholders.
 ├── .gitignore                   # Specified files and directories hidden from version control
 └── README.md                    # Project documentation
 ```
+## 🤖 Embedding Model Selection
+
+This pipeline uses sentence-transformer embeddings to vectorize text for downstream sentiment analysis and topic modeling. Before running the scripts, you must select the model that fits your data source.
+
+> [!TIP]
+> **Recommended Baseline:** Use `JehnenS/FinTextSim` for structural financial analysis and `BAAI/bge-base-en-v1.5` if expanding into general news text.
+
+### 📊 Model Comparison
+
+| Feature / Metric | `JehnenS/FinTextSim` (Default) | `BAAI/bge-base-en-v1.5` |
+| :--- | :--- | :--- |
+| **Primary Domain** | **Strictly Financial Texts** (10-Ks, Earnings Calls) | **General Purpose Texts** (News, Web Data) |
+| **Training Focus** | S&P 500 10-K Filings (Items 7 & 7A) | Broad multi-domain corpus pairs |
+| **Clustering Performance** | +81% Intratopic Similarity | Standard broad baseline groupings |
+| **Noise Reduction** | -100% Intertopic Overlap | Susceptible to semantic overlap in finance jargon |
+| **Architecture / Specs** | 384 Dimensions / 256 Context Window | 768 Dimensions / 512 Context Window |
+
+---
+
+### 🔍 Selection Logic
+
+* **Use `JehnenS/FinTextSim` for `Notebooks/Topic Modeling/`**
+  This model is optimized for corporate financials. When paired with `BERTopic`, it forms sharp, distinct economic clusters. Running standard models without financial tuning introduces high misclassification rates due to dense domain terminology.
+  
+* **Use `BAAI/bge-base-en-v1.5` for `Notebooks/Sentiment analysis/` & General Retrieval**
+  If your `Bank Data/raw/` directory expands to include broad macroeconomic news articles, customer letters, or generic texts, use the BGE base model to ensure out-of-domain robustness.
+
+---
+
+### ⚙️ How to Configure
+
+Toggle the model initialization string inside your configuration or initialization cells:
+
+```python
+# Configuration parameters for your execution pipeline
+
+# 1. Use for deep financial text parsing & topic extraction
+MODEL_PATH = "JehnenS/FinTextSim"
+
+# 2. Uncomment to switch to broad general-purpose semantic tasks
+# MODEL_PATH = "BAAI/bge-base-en-v1.5"
+```
 
