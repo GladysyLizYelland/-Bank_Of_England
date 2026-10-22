@@ -7,6 +7,13 @@ By leveraging NLP methods such as topic modelling, sentiment analysis, and summa
 
 *Note: This repository originated as a collaborative group project. I have since extended the codebase, expanded the scope, and integrated domain-specific architectures as an independent learning initiative.*
 
+> [!NOTE]
+> **Architectural Evolution & Model Upgrade:**
+> *This repository originated as a collaborative group project. I have since extended the codebase, expanded the scope, and integrated domain-specific architectures as an independent learning initiative.*
+> 
+> As part of this expansion, I migrated the Tier-1 sentiment pipeline away from the generic base model (`ProsusAI/finbert`) to a specialized tonal variant (`yiyanghkust/finbert-tone`). While the original FinBERT baseline functions well on explicit financial news headlines, it suffers from a pronounced negativity bias when applied to long-form banking text—frequently misclassifying balanced risk-management procedures (such as adjusting loan loss provisions) as market drops. Upgrading to FinBERT-Tone allows the pipeline to accurately isolate objective corporate delivery, structural confidence metrics, and baseline policy shifts within the formal Prepared Remarks.
+
+
 # 🎯 Objectives
 Extract and process textual data from G-SIB earnings calls.
 Identify key themes (topics) and emerging trends.
