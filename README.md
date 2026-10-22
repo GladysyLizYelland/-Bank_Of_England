@@ -41,16 +41,8 @@ Provide a structured dashboard or reporting format for key stakeholders.
 ├── .gitignore                   # Specified files and directories hidden from version control
 └── README.md                    # Project documentation
 ```
+
 ## 🤖 Embedding Model Selection
-
-This pipeline uses sentence-transformer embeddings to vectorize text for downstream sentiment analysis and topic modeling. Before running the scripts, you must select the model that fits your data source.
-
-As a team we chose to use `BAAI/bge-base-en-v1.5` , but I wanted to modify it to use `JehnenS/FinTextSim`, to observe if we obtain better outcomes. Due to a bit more research, I did that stated the reasons why.
-
-> [!TIP]
-> **Recommended Baseline:** Use `JehnenS/FinTextSim` for structural financial analysis and `BAAI/bge-base-en-v1.5` if expanding into general news text.
-
-# 🤖 Embedding Model Selection
 
 This pipeline leverages sentence-transformer embeddings to vectorize text for downstream sentiment analysis and topic modeling. Before running the production scripts, you must configure the embedding model that best fits your target dataset.
 
