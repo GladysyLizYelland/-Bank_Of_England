@@ -13,6 +13,7 @@ Generate summary insights with instruction-tuned models.
 Provide a structured dashboard or reporting format for key stakeholders.
 
 # 📂 Project Structure
+'''
 ├── Bank Data/                    # Raw and processed data
 │   ├── raw/                 # Unprocessed transcripts & reports
 |   ├── parsed/              # parsed unstructured data to structure format
@@ -33,3 +34,4 @@ Provide a structured dashboard or reporting format for key stakeholders.
 ├── requirements.txt         # Required Python libraries
 ├── README.md                # This file
 └── .gitignore               # Ignored files
+'''
