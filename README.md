@@ -30,7 +30,7 @@ Provide a structured dashboard or reporting format for key stakeholders.
 │   ├── eda/                     # Exploratory Data Analysis notebooks
 │   ├── preprocessing/           # Text cleansing, tokenisation, and normalization routines
 │   ├── sentiment_analysis/      # Sentiment scoring models and implementation i.e. Finbert
-│   ├── topic_modeling/          # BERTopic models + (FinTextSim or BAAI/bge-base-en-v1.5)
+│   ├── topic_modeling/          # BERTopic pipelines optimized with FinTextSim vs. BGE baselines
 │   ├── llm/                     # LLM prompting and fine-tuning experiments i.e FinGPT, Gemma, Falcon 8
 │   ├── consolidate/             # Data merging, alignment, and schema aggregation
 │   ├── summarisation.ipynb      # Text summarisation methods (extractive/abstractive)
