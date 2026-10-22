@@ -50,39 +50,44 @@ As a team we chose to use `BAAI/bge-base-en-v1.5` , but I wanted to modify it to
 > [!TIP]
 > **Recommended Baseline:** Use `JehnenS/FinTextSim` for structural financial analysis and `BAAI/bge-base-en-v1.5` if expanding into general news text.
 
+# 🤖 Embedding Model Selection
+
+This pipeline leverages sentence-transformer embeddings to vectorize text for downstream sentiment analysis and topic modeling. Before running the production scripts, you must configure the embedding model that best fits your target dataset.
+
+While our initial team implementation utilized `BAAI/bge-base-en-v1.5`, I conducted further research and extended the architecture to support `JehnenS/FinTextSim`. Integrating this domain-specific financial model yields significantly better clustering outcomes by eliminating semantic noise inherent to general-purpose models.
+
+> [!TIP]
+> **Recommended Baseline:** Use `JehnenS/FinTextSim` for structural financial text analysis (e.g., corporate filings and earnings calls) and fallback to `BAAI/bge-base-en-v1.5` only if expanding the raw dataset to include general, non-financial news text.
+
 ### 📊 Model Comparison
 
 | Feature / Metric | `JehnenS/FinTextSim` (Default) | `BAAI/bge-base-en-v1.5` |
 | :--- | :--- | :--- |
 | **Primary Domain** | **Strictly Financial Texts** (10-Ks, Earnings Calls) | **General Purpose Texts** (News, Web Data) |
 | **Training Focus** | S&P 500 10-K Filings (Items 7 & 7A) | Broad multi-domain corpus pairs |
-| **Clustering Performance** | +81% Intratopic Similarity | Standard broad baseline groupings |
-| **Noise Reduction** | -100% Intertopic Overlap | Susceptible to semantic overlap in finance jargon |
-| **Architecture / Specs** | 384 Dimensions / 256 Context Window | 768 Dimensions / 512 Context Window |
-
----
+| **Clustering Performance** | **+81%** Intratopic Similarity | Standard broad baseline groupings |
+| **Noise Reduction** | **-100%** Intertopic Overlap | Susceptible to semantic overlap in financial jargon |
+| **Architecture Specs** | 384 Dimensions / 256 Context Window | 768 Dimensions / 512 Context Window |
 
 ### 🔍 Selection Logic
 
-* **Use `JehnenS/FinTextSim` for `Notebooks/Topic Modeling/`**
-  This model is optimized for corporate financials. When paired with `BERTopic`, it forms sharp, distinct economic clusters. Running standard models without financial tuning introduces high misclassification rates due to dense domain terminology.
+* **Use `JehnenS/FinTextSim` for `notebooks/topic_modeling/`**  
+  This model is strictly optimized for corporate financial semantics. When paired with `BERTopic`, it isolates sharp, distinct economic clusters. Running standard models without financial tuning introduces high misclassification rates due to dense, specialized domain terminology.
   
-* **Use `BAAI/bge-base-en-v1.5` for `Notebooks/Sentiment analysis/` & General Retrieval**
-  If your `Bank Data/raw/` directory expands to include broad macroeconomic news articles, customer letters, or generic texts, use the BGE base model to ensure out-of-domain robustness.
-
----
+* **Use `BAAI/bge-base-en-v1.5` for `notebooks/sentiment_analysis/` & Broad Retrieval**  
+  If the `bank_data/raw/` directory expands to include broad macroeconomic news articles, customer letters, or generic texts, use the BGE base model to ensure robust out-of-domain coverage.
 
 ### ⚙️ How to Configure
 
-Toggle the model initialization string inside your configuration or initialization cells:
+Toggle the model initialization string inside your configuration layer or notebook initialization cells:
 
 ```python
-# Configuration parameters for your execution pipeline
+# Configuration parameters for the execution pipeline
 
-# 1. Use for deep financial text parsing & topic extraction
+# 1. Preferred Choice: Specialized financial parsing & topic extraction
 MODEL_PATH = "JehnenS/FinTextSim"
 
-# 2. Uncomment to switch to broad general-purpose semantic tasks
+# 2. Alternative: Broad general-purpose semantic retrieval
 # MODEL_PATH = "BAAI/bge-base-en-v1.5"
 ```
 
