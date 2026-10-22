@@ -11,3 +11,5 @@ Identify key themes (topics) and emerging trends.
 Conduct sentiment analysis.
 Generate summary insights with instruction-tuned models.
 Provide a structured dashboard or reporting format for key stakeholders.
+
+# 📂 Project Structure
