@@ -46,7 +46,7 @@ Provide a structured dashboard or reporting format for key stakeholders.
 
 This pipeline leverages sentence-transformer embeddings to vectorize text for downstream sentiment analysis and topic modeling. Before running the production scripts, you must configure the embedding model that best fits your target dataset.
 
-While our initial team implementation utilized `BAAI/bge-base-en-v1.5`, I conducted further research and extended the architecture to support `JehnenS/FinTextSim`. Integrating this domain-specific financial model yields significantly better clustering outcomes by eliminating semantic noise inherent to general-purpose models.
+While our initial team implementation utilised `BAAI/bge-base-en-v1.5`, I conducted further research and extended the architecture to support `JehnenS/FinTextSim`. Integrating this domain-specific financial model yields significantly better clustering outcomes by eliminating semantic noise inherent to general-purpose models.
 
 ### 📊 Model Comparison
 
