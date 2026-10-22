@@ -13,25 +13,30 @@ Generate summary insights with instruction-tuned models.
 Provide a structured dashboard or reporting format for key stakeholders.
 
 # 📂 Project Structure
-'''
-├── Bank Data/                    # Raw and processed data
-│   ├── raw/                 # Unprocessed transcripts & reports
-|   ├── parsed/              # parsed unstructured data to structure format
-│   ├── Preprocessed/             # parsed data that has Preprocessed text data
-|   ├─- Sentimented/           # Preprocessed text data that have sentiment metrics added
-|   ├─- Topics/           # Preprocessed text data that have sentiment metrics added with topics.
-├── Notebooks/               # Jupyter/Colab notebooks for analysis
-│   ├── Parser/          
-│   ├── EDA/             # Exploratory Data Analysis
-│   ├── Prerprocessing/        
-│   ├── Sentiment analysis/
-│   ├── Topic Modeling/
-│   ├── LLM/
-│   ├── Conolidate/
-│   ├── Summarisation.ipynb    # Text summarisation methods
-│   ├── Visualization         # Data visualisation scripts
-├── reports/                 # Documentation and findings
-├── requirements.txt         # Required Python libraries
-├── README.md                # This file
-└── .gitignore               # Ignored files
-'''
+
+```text
+.
+├── bank_data/                   # Data storage layer
+│   ├── raw/                     # Raw, unstructured transcripts and documents
+│   ├── parsed/                  # Structured formats extracted from raw text
+│   ├── preprocessed/            # Cleaned, tokenised text data optimized for NLP
+│   ├── sentimented/             # Preprocessed data with sentiment scores/metrics added
+│   └── topics/                  # Final processed text mapped with dominant themes/topics
+│
+├── notebooks/                   # R&D and analysis environment
+│   ├── parser/                  # Raw text extraction and structured parsing pipelines
+│   ├── eda/                     # Exploratory Data Analysis notebooks
+│   ├── preprocessing/           # Text cleansing, tokenisation, and normalization routines
+│   ├── sentiment_analysis/      # Sentiment scoring models and implementation
+│   ├── topic_modeling/          # Latent Dirichlet Allocation (LDA) / BERTopic models or others
+│   ├── llm/                     # Large Language Model prompting and fine-tuning experiments
+│   ├── consolidate/             # Data merging, alignment, and schema aggregation
+│   ├── summarisation.ipynb      # Text summarisation methods (extractive/abstractive)
+│   └── visualization/           # Notebooks for generating analytical plots and charts
+│
+├── reports/                     # Generated insights, final documentation, and project findings
+├── requirements.txt             # Python dependencies and library versions
+├── .gitignore                   # Specified files and directories hidden from version control
+└── README.md                    # Project documentation
+```
+
