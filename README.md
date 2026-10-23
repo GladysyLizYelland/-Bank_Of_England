@@ -37,7 +37,7 @@ Provide a structured dashboard or reporting format for key stakeholders.
 │   ├── preprocessing/           # Text cleansing, tokenisation, and normalization routines
 │   ├── sentiment_analysis/      # Sentiment scoring models and implementation i.e. Finbert
 │   ├── topic_modeling/          # BERTopic pipelines optimised with FinTextSim vs. BGE baselines
-│   ├── llm/                     # Prompt engineering and fine-tuning experiments (e.g., FinGPT, Gemma, Llama 3.3)
+│   ├── llm/                     # Prompt engineering and fine-tuning experiments (e.g., FinGPT, Gemini, Llama 3.3) 
 │   ├── consolidate/             # Data merging, alignment, and schema aggregation
 │   ├── summarisation.ipynb      # Text summarisation methods (extractive/abstractive)
 │   └── visualization/           # Notebooks for generating analytical plots and charts
